@@ -1,9 +1,9 @@
 const moment = require("moment-timezone");
 const fs = require("fs");
 
-moment.tz.setDefault("Asia/Jakarta").locale("id");
+moment.tz.setDefault("Asia/Makassar").locale("id");
 
-let dt = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
+let dt = moment(Date.now()).tz('Asia/Makassar').locale('id').format('a')
 const ucapanWaktu = "Selamat "+dt.charAt(0).toUpperCase() + dt.slice(1)
 let setting = JSON.parse(fs.readFileSync('./config.json'))
 const { getLimit, getBalance, cekGLimit } = require("../lib/limit")
@@ -57,8 +57,8 @@ exports.allmenu = (sender, prefix, pushname, isOwner, isPremium, balance, limit,
  ❑ *INFO SERVER*
  ‣ _Library : Baileys-MD._
  ‣ _Prefix : Multi Prefix_
- ‣ _Tanggal : ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}_
- ‣ _Waktu : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}_
+ ‣ _Tanggal : ${moment.tz('Asia/Makassar').format('DD/MM/YY')}_
+ ‣ _Waktu : ${moment.tz('Asia/Makassar').format('HH:mm:ss')}_
  
  ❑ *INFO USERS*
  ‣ _Status : ${isOwner ? 'Owner' : isPremium ? 'Premium' : 'Free'}_
@@ -72,7 +72,6 @@ exports.menuall = (sender, prefix, pushname) => {
 	return `
 _*•──•──•──•──•──•──•──•*_
    *NEOBOT WHATSAPP*
-  *BAILEYS MULTI DEVICE*
 _*•──•──•──•──•──•──•──•*_
 
 ${J1} *_MAIN MENU_* ${J4}
